@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- id 选择器以 "#" 来定义。 -->
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            h1,h2,h3,h4,h5,h6 {
+                color: green;
+            }
+            body {
+                font-family: Verdana, sans-serif;
+            }
+            #header {
+                background-color:black;
+                color:white;
+                text-align:center;
+                padding:5px;
+
+            }
+            #nav {
+                line-height:30px;
+                background-color:#eeeeee;
+                height:300px;
+                width:400px;
+                float:left;
+                padding:5px;      
+
+            }
+            #section {
+                width:1000px;
+                height:700px;
+                float:left;
+                padding:10px;    
+            
+            }
+            #footer {
+                background-color:black;
+                color:white;
+                clear:both;
+                text-align:center;
+                padding:5px;      
+            
+            }
+        </style>
+        
+    </head>
+
+    <body>
+        <h1>PostgreSQL监视器</h1>
+        <div id="header">
+            <h1>用户每次对数据库的操作都将被解析成SQL在下面显示出来</h1>
+        </div>
+
+        <div id="nav">
+            <h1> 作者简介</h1>
+            <p>
+            何敏，目前服务于成都文武信息技术有限公司，从事PostgreSQL数据库相关工作超过五年，有丰富的开发和运维经验，精通PostgreSQL数据库迁移、高可用、系统方案设计等。
+            参与开发公司的PostgreSQL高可用系统EcoX、RDS系统，对PostgreSQL高可用系统有非常深入的了解。
+            服务过银行、保险、电力等行业客户，帮助客户用PostgreSQL构建核心系统，并提供PostgreSQL技术支持。
+            </p>
+            <img src="/images/my_short.png" alt="个人照片" width=400 />
+        </div>
+
+        <div id="section">
+            <h1>具体变化:</h1>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <td>ID</td>
+                    <td>SQL</td>
+                </tr>
+                <% for(var i=0;i<data.length;i++){ %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><%= data[i] %></td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+
+        <div id="footer">
+            Copyright ? ks17.com
+        </div>
+    </body>
+
+</html>
