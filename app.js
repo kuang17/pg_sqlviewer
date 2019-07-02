@@ -53,6 +53,7 @@ app.put('/users/:username', function(req, res) {
     res.send('Done');
 });
 
+
 app.post('/users/:username', function(req, res) { 
     // 定义了一个post变量，用于暂存请求体的信息
    // var post = '';     

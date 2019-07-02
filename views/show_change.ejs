@@ -35,14 +35,26 @@
             }
             #footer {
                 background-color:black;
-                color:white;
-                clear:both;
+                color:white; clear:both;
                 text-align:center;
                 padding:5px;      
             
             }
         </style>
-        
+
+        <script>
+            function displayResult(){
+                var radios=document.getElementById("change_type");
+                for(var i=0;i<radios.length;i++){
+                    if(radios[i].checked == true){
+                        if ( radios[i].value === "get")
+                            console.log("get");
+                    }
+
+                }
+            }
+        </script>
+
     </head>
 
     <body>
@@ -62,6 +74,16 @@
         </div>
 
         <div id="section">
+            <form action="http://127.0.0.1:3000/pgview/choose" method="POST">
+                <label> 
+                    <input type="radio" name="change_type" id="get" value=1 checked=<%= get %> > Get Changes
+                </label>
+                <label> 
+                    <input type="radio" name="change_type" id="peek" value=2 checked=<%= peek %> > Peek Changes
+                </label>
+                <input type="submit" value="Submit">
+            </form>
+
             <h1>具体变化:</h1>
             <table class="table table-bordered text-center">
                 <tr>
